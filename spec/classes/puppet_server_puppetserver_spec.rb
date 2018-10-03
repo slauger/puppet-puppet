@@ -718,7 +718,7 @@ describe 'puppet::server::puppetserver' do
 
           it {
             should contain_file('/etc/custom/puppetserver/conf.d/auth.conf').
-              with_content(%r{^(\ *)path: "^/puppet/v3/facts/(.*)$})
+              with_content(%r{^(\ *)path: "\^/puppet/v3/facts/(.*)$})
           }
         end
 
@@ -732,7 +732,7 @@ describe 'puppet::server::puppetserver' do
 
           it {
             should contain_file('/etc/custom/puppetserver/conf.d/auth.conf').
-              without_content(%r{^(\ *)path: "^/puppet/v3/facts/(.*)$})
+              without_content(%r{^(\ *)path: "\^/puppet/v3/facts/(.*)$})
           }
         end
       end
